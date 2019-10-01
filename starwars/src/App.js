@@ -22,11 +22,8 @@ const App = () => {
           .then(response => {
             // console.log(response.data.results);
             setCharacter(response.data.results);
+            setPage(response.data)
             console.log(response.data)
-
-            if (page === 'next') {
-              setCharacter(response.data.next);
-            }
           })
       })
       .catch(err => {
@@ -35,9 +32,7 @@ const App = () => {
     }
     fetchData();
 
-  },[page])
-  
-  
+  },[])
 
 
 
